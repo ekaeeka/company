@@ -1,0 +1,12 @@
+img{
+    width: 200px;
+    height: 100px;
+}
+td{
+    border: 1px solid black;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
