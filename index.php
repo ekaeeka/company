@@ -22,7 +22,7 @@ $company = zapros("SELECT * FROM `company_info`")->fetch_all(MYSQLI_ASSOC);
         <td>Описание</td>
         <td>Владелец</td>
     </tr>
-    //До конца массива рисуется строка таблицы tr в ней пишется картинка у которой пусть равен значению из бд, и так у всех дальше
+    <!--До конца массива рисуется строка таблицы tr в ней пишется картинка у которой пусть равен значению из бд, и так у всех дальше-->
     <?php  for ($i=0;$i<count($company);$i++){
         echo "<tr><td><img src='{$company[$i]['logo']}'></td><td>{$company[$i]['name']}</td><td>{$company[$i]['about']}</td><td>{$company[$i]['vladelec']}</td></tr>";
     }?>
@@ -34,8 +34,17 @@ $company = zapros("SELECT * FROM `company_info`")->fetch_all(MYSQLI_ASSOC);
     <input type="text" name="about" placeholder="Введите описание">
     <input type="text" name="vladelec" placeholder="Введите хозяина компании">
     <input type="submit" name="butt" class="button">
-
 </form>
-
+<div>Удалить фирму</div>
+<form action="delete.php" method="POST">
+    <input type="text" name="name_c" placeholder="введите название компании">
+    <input type="submit" name="butt" class="button">
+</form>
+<div>Редактировать описание</div>
+<form action="red.php" method="POST">
+    <input type="text" name="name_c" placeholder="введите название компании">
+    <input type="text" name="about" placeholder="Введите описание">
+    <input type="submit" name="butt" class="button">
+</form>
 </body>
 </html>
